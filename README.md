@@ -1,4 +1,4 @@
-# Vulnerable-AWKer
+# Vulnerable-AWK-Playground
 
 This application is a demonstration of command injection susceptibility designed for presentation
 purposes at the `Vienna Devops Meetup`.
