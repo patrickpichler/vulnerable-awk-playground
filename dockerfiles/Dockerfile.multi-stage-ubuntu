@@ -1,0 +1,16 @@
+# This is version 1  of the build via dockerfile. It is suboptimal, as it doesn't leverage
+# multi-stage build, which means the resulting image will have the full golang toolchain installed
+
+FROM golang:1.21.3-bookworm as build
+
+WORKDIR /app
+
+COPY go.mod go.sum main.go /app/
+
+RUN go build -o vulnerable-awker ./main.go
+
+FROM ubuntu:23.10
+
+COPY --from=build /app/vulnerable-awker /usr/bin/
+
+ENTRYPOINT ["vulnerable-awker"]
