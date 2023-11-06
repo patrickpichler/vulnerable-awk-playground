@@ -1,4 +1,4 @@
-module github.com/patrickpichler/unsafe-pinger
+module github.com/patrickpichler/vulnerable-awk-playground
 
 go 1.21.1
 
