@@ -4,11 +4,11 @@ build-all-in-one:
 run-all-in-one:
 	docker run --rm -it -p 8080:8080 vulnerable-awker:all-in-one
 
-build-multi-stage-ubuntu:
-	docker build . -t vulnerable-awker:multi-stage-ubuntu -f dockerfiles/Dockerfile.multi-stage-ubuntu
+build-multi-stage-debian:
+	docker build . -t vulnerable-awker:multi-stage-debian -f dockerfiles/Dockerfile.multi-stage-ubuntu
 
-run-multi-stage-ubuntu:
-	docker run --rm -it -p 8080:8080 vulnerable-awker:multi-stage-ubuntu
+run-multi-stage-debian:
+	docker run --rm -it -p 8080:8080 vulnerable-awker:multi-stage-debian
 
 build-multi-stage-alpine:
 	docker build . -t vulnerable-awker:multi-stage-alpine -f dockerfiles/Dockerfile.multi-stage-alpine
