@@ -7,8 +7,8 @@ WORKDIR /app
 
 COPY go.mod go.sum main.go /app/
 
-RUN go build -o vulnerable-awker ./main.go
+RUN go build -o vulernable-awk-playground ./main.go
 
-RUN cp vulnerable-awker /usr/bin/
+RUN cp vulernable-awk-playground /usr/bin/
 
-ENTRYPOINT ["vulnerable-awker"]
+ENTRYPOINT ["vulernable-awk-playground"]
