@@ -4,11 +4,11 @@ build-all-in-one:
 run-all-in-one:
 	docker run --rm -it -p 8080:8080 vulernable-awk-playground:all-in-one
 
-build-multi-stage-debian:
-	docker build . -t vulernable-awk-playground:multi-stage-debian -f dockerfiles/Dockerfile.multi-stage-ubuntu
+build-multi-stage-ubuntu:
+	docker build . -t vulernable-awk-playground:multi-stage-ubuntu -f dockerfiles/Dockerfile.multi-stage-ubuntu
 
-run-multi-stage-debian:
-	docker run --rm -it -p 8080:8080 vulernable-awk-playground:multi-stage-debian
+run-multi-stage-ubuntu:
+	docker run --rm -it -p 8080:8080 vulernable-awk-playground:multi-stage-ubuntu
 
 build-multi-stage-alpine:
 	docker build . -t vulernable-awk-playground:multi-stage-alpine -f dockerfiles/Dockerfile.multi-stage-alpine
