@@ -6,7 +6,7 @@ contents:
     - https://packages.wolfi.dev/os
     - ./packages
   packages:
-    - busybox
+    - gawk
     - vulnerable-awk-playground
 
 entrypoint:
