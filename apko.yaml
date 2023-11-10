@@ -9,6 +9,17 @@ contents:
     - gawk
     - vulnerable-awk-playground
 
+accounts:
+  groups:
+    - groupname: nobody
+      gid: 65534
+
+  users:
+    - username: nobody
+      uid: 65534
+
+  run-as: nobody
+
 entrypoint:
   command: vulnerable-awk-playground
 
