@@ -4,10 +4,10 @@ WORKDIR /app
 
 COPY go.mod go.sum main.go /app/
 
-RUN go build -o vulernable-awk-playground ./main.go
+RUN go build -o vulnerable-awk-playground ./main.go
 
 FROM alpine:3.18
 
-COPY --from=build /app/vulernable-awk-playground /usr/bin/
+COPY --from=build /app/vulnerable-awk-playground /usr/bin/
 
-ENTRYPOINT ["vulernable-awk-playground"]
+ENTRYPOINT ["vulnerable-awk-playground"]

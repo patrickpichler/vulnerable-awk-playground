@@ -1,26 +1,26 @@
 build-all-in-one:
-	docker build . -t vulernable-awk-playground:all-in-one -f dockerfiles/Dockerfile.all-in-one
+	docker build . -t vulnerable-awk-playground:all-in-one -f dockerfiles/Dockerfile.all-in-one
 
 run-all-in-one:
-	docker run --rm -it -p 8080:8080 vulernable-awk-playground:all-in-one
+	docker run --rm -it -p 8080:8080 vulnerable-awk-playground:all-in-one
 
 build-multi-stage-ubuntu:
-	docker build . -t vulernable-awk-playground:multi-stage-ubuntu -f dockerfiles/Dockerfile.multi-stage-ubuntu
+	docker build . -t vulnerable-awk-playground:multi-stage-ubuntu -f dockerfiles/Dockerfile.multi-stage-ubuntu
 
 run-multi-stage-ubuntu:
-	docker run --rm -it -p 8080:8080 vulernable-awk-playground:multi-stage-ubuntu
+	docker run --rm -it -p 8080:8080 vulnerable-awk-playground:multi-stage-ubuntu
 
 build-multi-stage-alpine:
-	docker build . -t vulernable-awk-playground:multi-stage-alpine -f dockerfiles/Dockerfile.multi-stage-alpine
+	docker build . -t vulnerable-awk-playground:multi-stage-alpine -f dockerfiles/Dockerfile.multi-stage-alpine
 
 run-multi-stage-alpine:
-	docker run --rm -it -p 8080:8080 vulernable-awk-playground:multi-stage-alpine
+	docker run --rm -it -p 8080:8080 vulnerable-awk-playground:multi-stage-alpine
 
 build-multi-stage-chainguard:
-	docker build . -t vulernable-awk-playground:multi-stage-chainguard -f dockerfiles/Dockerfile.multi-stage-chainguard
+	docker build . -t vulnerable-awk-playground:multi-stage-chainguard -f dockerfiles/Dockerfile.multi-stage-chainguard
 
 run-multi-stage-chainguard:
-	docker run --rm -it -p 8080:8080 vulernable-awk-playground:multi-stage-chainguard
+	docker run --rm -it -p 8080:8080 vulnerable-awk-playground:multi-stage-chainguard
 
 melange.rsa melange.rsa.pub:
 	melange keygen
