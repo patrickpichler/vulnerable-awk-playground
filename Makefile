@@ -25,7 +25,8 @@ run-multi-stage-chainguard:
 melange.rsa melange.rsa.pub:
 	melange keygen
 
-packages/aarch64/APKINDEX.json: melange.rsa melange.rsa.pub melange.yaml
+packages/aarch64/APKINDEX.json: melange.rsa melange.rsa.pub melange.yaml main.go
+	@rm -rf packages
 	DOCKER_HOST=$$(docker context inspect -f '{{ .Metadata.Endpoints.docker.Host }}') \
 							melange build --arch arm64 \
 														--runner docker \
