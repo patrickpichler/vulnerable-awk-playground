@@ -29,30 +29,34 @@ func main() {
 			return errors.New("missing `awkScript` form value")
 		}
 
-		result, err := awk(awkScript, text)
+		result, stdErr, err := awk(awkScript, text)
 
 		if err != nil {
 			return err
 		}
 
-		return c.String(http.StatusOK, result)
+		return c.JSON(http.StatusOK, map[string]string{
+			"stdout": result,
+			"stderr": stdErr,
+		})
 	})
 
 	e.Logger.Fatal(e.Start(":8080"))
 }
 
-func awk(script string, text string) (string, error) {
+func awk(script string, text string) (string, string, error) {
 	cmd := exec.Command("awk", script)
 
 	buffer := bytes.NewBufferString(text)
+	var stderr bytes.Buffer
 
 	cmd.Stdin = buffer
+	cmd.Stderr = &stderr
 
 	data, err := cmd.Output()
 
 	if err != nil {
-		return "", err
+		return "", "", err
 	}
-
-	return string(data), nil
+	return string(data), stderr.String(), nil
 }
